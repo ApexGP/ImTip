@@ -1,8 +1,8 @@
 # ImTip 智能桌面助手
- 
-<a href="https://imtip.aardio.com/update/ImTip.7z">点这里下载 ImTip</a> - 免费开源，仅 860 KB。独立 EXE 无任何外部依赖，兼容 XP，Vista，Win7，Win8，Win10，Win11 ……  
 
-ImTip 提供 [输入跟踪提示](#一输入跟踪提示)、[超级热键（各种桌面应用快速接入 AI）](#二超级热键)、[自定义 AI 助手](#三-ai-助手) 等功能。
+<a href="https://github.com/ApexGP/ImTip/releases">访问 Releases 页面下载 ImTip</a> - 免费开源，仅 860 KB。独立 EXE 无任何外部依赖，兼容 XP，Vista，Win7，Win8，Win10，Win11 ……
+
+ImTip 提供 [输入跟踪提示](#一输入跟踪提示)、[超级热键](#二超级热键) 等功能。
 
 - [超级热键开发指南](https://www.aardio.com/zh-cn/doc/?q=library-guide%2Fstd%2Fkey%2Fhotkey.html)
 - [配置输入法状态跟踪提示规则与外观](https://www.aardio.com/zh-cn/doc/?q=library-guide/std/key/ime.stateBar.html)
@@ -37,8 +37,8 @@ ImTip 支持可视化编辑状态提示外观：
 
 ![调色](./screenshots/color.gif)
 
-可将外观方案直接拖入 ImTip.exe 或外观设置窗口快速导入。  
-支持用剪贴板直接复制粘贴配置方案代码。  
+可将外观方案直接拖入 ImTip.exe 或外观设置窗口快速导入。
+支持用剪贴板直接复制粘贴配置方案代码。
 
 ![复制配置方案](./screenshots/copy.gif)
 
@@ -53,55 +53,22 @@ ImTip **CPU 占用极低**，可以通过设置「跟踪检测速度」调整 CP
 ImTip 提供可编程扩展的「超级热键」。
 
 默认提供以下热键：
-- <kbd>Ctrl+@</kbd> AI 全局翻译与词典
+- <kbd>Ctrl+@</kbd> 翻译与词典
 - <kbd>Ctrl+#</kbd> 快速查单词（汽泡提示）
 - <kbd>Ctrl+$</kbd> 打开财务大写、日期时间大写、数学运算工具
 
 ![超级热键调用中文大写工具](./screenshots/cn.gif)
 
-更多示例：
-
-超级热键调用 AI 大模型自动编写 aardio 代码（ aardio 现在已自带类似的 F1 键 AI 助手）：
-
-![超级热键调用 AI 编写代码](./screenshots/fim.gif)
-
-超级热键调调用 AI 大模型在 PowerShell 中写代码
-
-![超级热键调调用 AI 大模型在 PowerShell 中写代码](https://www.aardio.com/zh-cn/doc/images/fim-ps.gif)
-
-超级热键调调用 AI 大模型在记事本中续写与补全
-
-![超级热键调调用 AI 大模型在记事本中续写与补全](https://www.aardio.com/zh-cn/doc/images/fim-notepad.gif)
-
-<kbd>Ctrl+@</kbd> 调用 AI 全局翻译 + 词典
-
-![AI 全局翻译与词典](./screenshots/dict.gif)
+![翻译与词典](./screenshots/dict.gif)
 
 [超级热键大全 | 教程](https://www.aardio.com/zh-cn/doc/?q=library-guide%2Fstd%2Fkey%2Fhotkey.html)
 
->  AI 翻译与词典需要用到 `string.words`,`table.coca2000` 扩展库，AI 翻译的大声朗读功能需要用到 `web.edgeTextToSpeech` 扩展库。
+>  翻译与词典需要用到 `string.words`、`table.coca2000` 扩展库，大声朗读功能需要用到 `web.edgeTextToSpeech` 扩展库。
 >  1. 请先在 aardio 在点击「 工具 » 扩展库 」
 >  2. 搜索关键词“英语”，勾选找到的 `string.words`,`table.coca2000` 扩展库
 >  3. 然后点击 「安装」 按钮
->  
+>
 >  如果 aardio 已运行并且当前线程调用了 `import ide` 则支持自动安装扩展库
-
-## 三、 AI 助手
-
-ImTip 提供简洁可定制的 AI 桌面助手。
-可迅速将大模型 API 转换为可用的桌面助手。AI 助手已支持渲染数学公式、代码高亮、一键分享截长屏、自动联网读取文档 …… 等功能。
-
-可自定义多个 AI 助手配置，同一会话也可以随时切换不同的大模型。新版 ImTip 已经默认添加了翻译、词典等 AI 助手。
-
-![AI 助手](/screenshots/ai.gif)
-
-ImTip 也支持在超级热键中快助调用 AI 大模型接口，或者自动调用 AI 会话窗口。启用步骤如下：
-1. 在 ImTip 主界面勾选启用超级热键。
-2. 后点击『编辑超级热键』，在超级热键配置中修改 AI 接口参数。
-![在超级热键中配置 AI 接口参数](/screenshots/hotkey-ai.gif)  
-3. 点击保存按钮后热键自动生效。  
-![保存超级热键配置](/screenshots/hotkey-save.gif)
-
 
 ## 托盘菜单
 
@@ -111,14 +78,13 @@ ImTip 托盘菜单提供快捷启用系统输入法、切换双拼方案等功�
 
 ImTip 快捷键：
 
-按住 <kbd>Shift</kbd> 点击托盘图标可打开 AI 助手。  
-接住 <kbd>Ctrl</kbd> 点击托盘图标可启用/禁用输入跟踪提示。
+按住 <kbd>Ctrl</kbd> 点击托盘图标可启用/禁用输入跟踪提示。
 
-输入法常用快捷键:  
-<kbd>Shift</kbd> 切换中/英输入；  
-<kbd>Ctrl+.</kbd> 换中/英标点；  
-<kbd>Shift+空格</kbd> 切换全/半角；  
-<kbd>Alt+Shift</kbd> 切换语言  
+输入法常用快捷键:
+<kbd>Shift</kbd> 切换中/英输入；
+<kbd>Ctrl+.</kbd> 换中/英标点；
+<kbd>Shift+空格</kbd> 切换全/半角；
+<kbd>Alt+Shift</kbd> 切换语言
 
 ## 常见问题
 
@@ -130,7 +96,7 @@ ImTip 快捷键：
 
 ImTip 默认以普通权限启动，以管理权限启动 ImTip.exe —— 才会对其他管理权限窗口生效。以管理权限启动后重新勾选 「允许开机启动」，则开机以管理权限启动（ 不会再弹出请求权限弹框 , 注意只有同样在管理权限下启动才能取消此设置 ）。
 
-### 3. 窗口兼容性 
+### 3. 窗口兼容性
 
 ImTip 使用了多种不同的接口获取输入位置，但少数任何接口都不支持的应用窗口会退化为取鼠标输入指针位置。
 
@@ -153,7 +119,7 @@ print( java.accessBridge.switch(true) );
 
 请参考：[输入法与键备状态检测原理与规则](https://www.aardio.com/zh-cn/doc/?q=library-guide/std/key/imeState.html)
 
-- 主流输入法基本都可以支持 ImTip 。 
+- 主流输入法基本都可以支持 ImTip 。
 
 - 微软自带的所有输入法完美支持 ImTip。
 
@@ -175,21 +141,17 @@ print( java.accessBridge.switch(true) );
 - `ImTip.exe 无参数`
 如果 ImTip 已运行则打开配置窗口，或者直接双击 ImTip.exe 也可以。
 
-- `ImTip.exe /chat 配置名称 /q 需要立即发送的问题`
-启动 AI 聊天助手会话窗口。配置名称可省略，q 参数也可以省略。
-aardio 提供 process.imTip 库可以方便地启动 ImTip 聊天助手，可参考：[超级热键 - 自动调用 AI 会话窗口](https://www.aardio.com/zh-cn/doc/library-guide/std/key/hotkey.html#imtip-ai-chat)。 
-
 - `ImTip.exe /sys`
 启动时不显示主界面。勾选开机启动时设置的这是这个参数。
 
 ### 6. 删除或重置 ImTip 配置与数据。
 
 先退出 ImTip ，然后按 <kbd>Ctrl+R</kbd>打开「运行」，
-输入   
-`cmd /c rd /s /q  %localappdata%\aardio\std\ImTip`   
+输入
+`cmd /c rd /s /q  %localappdata%\aardio\std\ImTip`
 回车执行即可删除配置目录( 也会删除超级热键配置 )。
 
-重新运行 ImTip 会自动重置到最新版的默认配置。  
+重新运行 ImTip 会自动重置到最新版的默认配置。
 
 ****
 

@@ -1,4 +1,4 @@
-﻿//appTrayMenu 托盘菜单
+//appTrayMenu 托盘菜单
 import config;
 import fsys.dlg;
 import ui.doublePinyinMenu;
@@ -160,15 +160,6 @@ class appTrayMenu{
 			..mainForm.onTrayMenu(popmenu)
 		}
 		
-		popmenu.add('AI 智能助手\tShift+单击托盘',function(id){
- 			import process.imTip; 
-			process.imTip(chat = ""); 
-			
-			..mainForm.show(false);
-		});
-		
-		popmenu.add();//分隔线 
-		
 		popmenu.add('退出程序',function(id){ 
 			if(..mainSettingForm) ..mainSettingForm.exportStyleToSysConfig();
 			
@@ -257,7 +248,3 @@ appTrayMenu.weaselShowNotifications = function(value){
 /**intellisense()
 ui.appTrayMenu() = 托盘菜单\n!popmenu.
 end intellisense**/
-
-/*
-import process.imTip
-*/
