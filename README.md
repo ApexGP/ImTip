@@ -1,6 +1,6 @@
 # ImTip 智能桌面助手
 
-<a href="https://github.com/ApexGP/ImTip/releases">访问 Releases 页面下载 ImTip</a> - 免费开源，仅 860 KB。独立 EXE 无任何外部依赖，兼容 XP，Vista，Win7，Win8，Win10，Win11 ……
+<a href="https://github.com/ApexGP/ImTip/releases">访问 Releases 页面下载 ImTip</a> - 免费开源。独立 EXE 无任何外部依赖，兼容 XP，Vista，Win7，Win8，Win10，Win11 ……
 
 ImTip 提供 [输入跟踪提示](#一输入跟踪提示)、[超级热键](#二超级热键) 等功能。
 
