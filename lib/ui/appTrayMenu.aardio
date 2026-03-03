@@ -159,6 +159,57 @@ class appTrayMenu{
 		if(..mainForm.onTrayMenu){
 			..mainForm.onTrayMenu(popmenu)
 		}
+
+		popmenu.add('检查更新',function(id){
+			import inet.http;
+			import web.json;
+			import fsys.version;
+			import fsys.update.simpleMain;
+			var updateUrl = "https://raw.githubusercontent.com/ApexGP/ImTip/main/update.json";
+			var needUpdate = false;
+			var checked = false;
+			try{
+				var http = inet.http("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36");
+				var jsonStr = http.get(updateUrl);
+				http.close();
+				if(jsonStr && #jsonStr >= 2){
+					var remote = web.json.parse(jsonStr);
+					if(remote && remote.version){
+						var remoteVer = ..string.replace(remote.version,"^v","");
+						var exePath = ..io._exepath;
+						var r = fsys.version.getInfo(exePath);
+						var localVer = ..string.join({r.productVersion.major; r.productVersion.minor; r.productVersion.build; r.productVersion.revision},".");
+						var function parseVer(s){
+							var t = {};
+							for n in ..string.gmatch(s,"%d+") { ..table.push(t,..tonumber(n)) }
+							return t;
+						}
+						var function cmpVer(a,b){
+							for(i=1;..math.max(#a,#b)){
+								var va = a[i] or 0;
+								var vb = b[i] or 0;
+								if(va > vb) return 1;
+								if(va < vb) return -1;
+							}
+							return 0;
+						}
+						var ra,rb = parseVer(remoteVer),parseVer(localVer);
+						needUpdate = (cmpVer(ra,rb) > 0);
+						checked = true;
+					}
+				}
+			}
+			catch(e){}
+			if(needUpdate){
+				fsys.update.simpleMain("ImTip 桌面助手",updateUrl,..io.appData("/aardio/std/ImTip/app/update"),function(version,description,status){});
+			}
+			else if(checked){
+				..mainForm.msgbox("当前已是最新版本，无需更新。","ImTip");
+			}
+			else{
+				..mainForm.msgboxErr("检查更新失败，请检查网络连接。");
+			}
+		});
 		
 		popmenu.add('退出程序',function(id){ 
 			if(..mainSettingForm) ..mainSettingForm.exportStyleToSysConfig();

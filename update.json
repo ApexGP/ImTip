@@ -1,8 +1,8 @@
 {
-  "description": "Change update source to GitHub",
+  "description": "Fix update check error",
   "format": ".exe",
   "main": "ImTip.exe",
   "updater": "ImTip.exe",
   "url": "https://github.com/ApexGP/ImTip/releases/latest/download",
-  "version": "v8.1.1"
+  "version": "v8.1.2"
 }
