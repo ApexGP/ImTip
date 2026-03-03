@@ -1,0 +1,8 @@
+{
+  "description": "Remove AI-related components",
+  "format": ".exe",
+  "main": "ImTip.exe",
+  "updater": "ImTip.exe",
+  "url": "https://github.com/ApexGP/ImTip/releases/latest/download",
+  "version": "v8.1.0"
+}

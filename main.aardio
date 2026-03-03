@@ -63,7 +63,7 @@ if(!atom){
 import fsys.update.simpleMain;
 if( fsys.update.simpleMain(
 	"ImTip 桌面助手",
-	"http://imtip.aardio.com/update/",
+	"https://raw.githubusercontent.com/ApexGP/ImTip/main/update.json",
 	io.appData("/aardio/std/ImTip/app/update"),
 	function(version,description,status){})){
 	return 0;
